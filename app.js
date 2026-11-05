@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use("/kategori", kategoriRoutes);
 // TODO C3: daftarkan route buku pada path "/buku"
-app.use("/buku", menuRoutes);
+app.use("/buku", bukuRoutes);
 // TODO D3: daftarkan errorHandler sebagai middleware PALING AKHIR (setelah semua route)
 app.use(errorHandler);
 

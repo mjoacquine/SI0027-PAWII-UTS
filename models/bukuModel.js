@@ -73,4 +73,4 @@ const bukuSchema = new mongoose.Schema({
 });
 // TODO A3: export model dengan nama "Buku"
 
-module.exports = {};
+module.exports = mongoose.model("Buku", menuSchema);

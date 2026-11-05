@@ -23,7 +23,7 @@ exports.getAll = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = Math.min(parseInt(req.query.limit) || 10, MAX_LIMIT);
   const skip = (page - 1) * limit;
-  let query = Buku.find(filter).populate("kategoriId");
+  
 
 };
 
@@ -43,7 +43,7 @@ exports.getById = async (req, res) => {
 //   - 201 -> dokumen yang baru dibuat
 //   - validasi gagal / ISBN duplikat -> 400 (ditangani errorHandler)
 exports.create = async (req, res) => {
-  const { isbn } = req.body;
+  const {isbn} = req.body;
   if (isbn) {
     const existing = await Buku.findOne({ isbn });
     if (existing) {
@@ -52,7 +52,7 @@ exports.create = async (req, res) => {
   }
  
   const buku = await Buku.create(req.body);
-  res.status(201).json(menu);
+  res.status(201).json(buku);
 };
 
   // TODO B3

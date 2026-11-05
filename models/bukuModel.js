@@ -39,7 +39,7 @@ const bukuSchema = new mongoose.Schema({
     type: String,
     required: [true, "Kode wajib diisi"],
     unique: true,
-    // match: [{13}, "Format kode harus 13 digit angka"]
+    match: [{$13}, "Format kode harus 13 digit angka"]
   },
   penulis: {
     type: [String],

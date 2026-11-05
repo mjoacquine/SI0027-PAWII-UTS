@@ -23,6 +23,7 @@ exports.getAll = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = Math.min(parseInt(req.query.limit) || 10, MAX_LIMIT);
   const skip = (page - 1) * limit;
+  let query = Buku.find(filter).populate("kategoriId");
 
 };
 

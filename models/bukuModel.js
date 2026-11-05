@@ -25,7 +25,7 @@ const penerbitSchema = new mongoose.Schema({
     type: Number,
     min: [1990, "Tahun tidak boleh dibawah 1990"]
   }
-}, { _id: false };
+}, { _id: false });
 
 
 // TODO A2: buat bukuSchema
@@ -39,7 +39,7 @@ const bukuSchema = new mongoose.Schema({
     type: String,
     required: [true, "Kode wajib diisi"],
     unique: true,
-    match: [{13}, "Format kode harus 'MN-' diikuti tepat 6 digit angka"]
+    // match: [{13}, "Format kode harus 13 digit angka"]
   },
   penulis: {
     type: [String],

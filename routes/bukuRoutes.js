@@ -8,7 +8,11 @@
 const express = require("express");
 const router = express.Router();
 // TODO C1: require bukuController dari ../controllers/bukuController
-
+const bukuController = require
 // TODO C1: daftarkan kelima route di atas ke fungsi controller yang sesuai
-
+router.get("/", bukuController.getAll);
+router.get("/id", bukuController.getbyId);
+router.post("/", bukuController.create);
+router.put("/id", bukuController.update);
+router.put("/id", bukuController.delete);
 module.exports = router;
